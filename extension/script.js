@@ -9,7 +9,8 @@ const initIcons = () => {
 async function fetchActiveTasks() {
   const container = document.getElementById('video-list');
   try {
-    const res = await fetch('http://localhost:5002/api/playlist/test_user_123');
+    // const res = await fetch('http://localhost:5002/api/playlist/test_user_123');
+    const res = await fetch('https://growth-backend-voda.onrender.com/api/playlist/test_user_123');
     if (!res.ok) throw new Error('No active roadmap found');
     
     const data = await res.json();
@@ -120,7 +121,8 @@ async function fetchActiveTasks() {
 
 async function markCompleted(playlistId, day, videoId, isCompleted) {
   try {
-    await fetch('http://localhost:5002/api/playlist/update-status', {
+    // await fetch('http://localhost:5002/api/playlist/update-status', {
+    await fetch('https://growth-backend-voda.onrender.com/api/playlist/update-status', {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ playlistId, day, videoId, isCompleted })

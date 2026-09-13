@@ -10,6 +10,6 @@
     "storage"
   ],
   "host_permissions": [
-    "http://localhost:5002/*"
+    "https://growth-backend-voda.onrender.com/*"
   ]
 }
