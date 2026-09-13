@@ -1,0 +1,57 @@
+<!-- extension/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Growth - Today's Tasks</title>
+  
+  <!-- Local Files (No CDN!) -->
+  <link rel="stylesheet" href="tailwind.css">
+  <script src="lucide.min.js"></script>
+
+  <style>
+    body { background-color: #050505; color: #e5e7eb; }
+    .glass-card { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
+    .glass-card:hover { background: rgba(255, 255, 255, 0.04); border-color: rgba(99, 102, 241, 0.4); }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #050505; }
+    ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #555; }
+  </style>
+</head>
+<body class="min-h-screen p-8 antialiased selection:bg-indigo-500 font-sans">
+  
+  <div id="app" class="max-w-4xl mx-auto mt-10 pb-20">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
+      <div>
+        <h1 class="text-4xl font-extrabold tracking-tight mb-3" id="roadmap-title">
+          Fetching Goal...
+        </h1>
+        <div class="flex items-center gap-3">
+          <span id="day-label" class="px-4 py-1.5 text-sm font-medium text-indigo-300 bg-indigo-900 rounded-full border border-indigo-500">
+            Loading...
+          </span>
+        </div>
+      </div>
+      
+      <div id="streak-container" class="hidden flex items-center gap-2 px-5 py-2.5 bg-orange-900 border border-orange-500 rounded-2xl">
+        <i data-lucide="flame" class="text-orange-500 w-6 h-6"></i>
+        <span class="text-2xl font-bold text-orange-400" id="streak-counter">0</span>
+      </div>
+    </div>
+    
+    <div id="video-list" class="space-y-5">
+      <div class="animate-pulse flex gap-5 p-5 glass-card rounded-2xl">
+        <div class="w-48 h-28 bg-gray-800 rounded-xl"></div>
+        <div class="flex-1 space-y-3 py-2">
+          <div class="h-5 bg-gray-800 rounded w-3/4"></div>
+          <div class="h-4 bg-gray-800 rounded w-1/4"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Local Script Link -->
+  <script src="script.js"></script>
+</body>
+</html>

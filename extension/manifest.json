@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Growth - Daily Tasks",
+  "version": "1.0",
+  "description": "Replaces the new tab to show your daily YouTube learning tasks.",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "http://localhost:5002/*"
+  ]
+}
