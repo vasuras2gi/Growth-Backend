@@ -28,6 +28,17 @@ app.use(express.json());
 
 app.use('/api/playlist', playlistRoutes);
 
+app.get('/api/download-extension', (req, res) => {
+  // Navigates up one folder level from 'backend' to reach 'extension'
+  const filePath = path.join(__dirname, '../extension/growth-extension.zip');
+  res.download(filePath, 'Growth_Chrome_Extension.zip', (err) => {
+    if (err) {
+      console.error("File download failed:", err);
+      res.status(404).send("File not found");
+    }
+  });
+});
+
 app.get('/', (req, res) => {
     res.send('SkillFlow API is running...');
 });
