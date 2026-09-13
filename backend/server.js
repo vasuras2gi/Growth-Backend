@@ -5,6 +5,7 @@ import cors from 'cors';
 import connectDB from './config/db.js';
 import playlistRoutes from './routes/playlistRoutes.js';
 import path from "path";
+import { fileURLToPath } from 'url';
 
 dotenv.config();
 connectDB(); // Database connection function
